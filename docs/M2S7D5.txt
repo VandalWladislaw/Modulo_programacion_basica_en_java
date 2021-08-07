@@ -1,0 +1,3 @@
+Semana 7 Dia 5
+Instalo MySQL Workbench, aprendo a configurar una red local en el programa
+Afortunadamente ya conocía lo que son los diagramas de entidad/relación. No es necesario investigar, sino recordar.

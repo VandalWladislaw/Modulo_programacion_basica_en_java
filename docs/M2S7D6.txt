@@ -1,0 +1,3 @@
+Semana 7 Dia 6
+Creo modelo relacional en una pagina web, solicito revisión, recibo feedback de parte de profesor y compañeros.
+Corrijo modelo mencionado, y me vuelco a ver cómo realizar un modelo entidad/relación, ya que las aplicaciones web presentan restricciones en cuanto a cantidad de figuras.

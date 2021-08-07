@@ -1,0 +1,2 @@
+Repaso el código, para ver si algo se puede mejorar. Recompongo la clase de notas, para ordenar mejor y dejar espacio/placeholders por si debo incluir metodos de modificacion/eliminacion en sí misma. Además, incorporo la biblioteca de tiempo para obtener el instante para todos los atributos de fecha de creacion y modificación.
+Por lo demás, creo que dejaré el proyecto como está. Con los contenidos que manejo, no podré avanzar más.

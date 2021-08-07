@@ -1,0 +1,4 @@
+Documentacion // evidencia 2 semana 5
+-Día de integración al curso
+-Se plantea la idea de una aplicación que reproduce archivos de sonido, no dirigida a reproducir música, sino que a examinar archivos de audio para estudiar.
+-En vez de establecer una reproducción continua, se darían herramientas para crear marcas de reproducción para cada pista de audio.

@@ -1,0 +1,3 @@
+Semana 9 Dia 1
+Instalacion de Android studio, sugerencia del profesor.
+Reviso todo nuevamente, aun no encuentro cómo hacer ingresos automaticos a la tabla de claves foraneas. Se supone que el usuario escoge las pistas a cada lista de reproducción, pero no conoce ninguna llave primaria ni secundaria. Es necesario que al crear entradas, en ningun caso la entrada de carácteres sea manual, ya que serían sujetos a errores humanos, y tendría que implementar código que se encargue de dicho escenario.

@@ -1,0 +1,2 @@
+Semana 8 Dia 3
+Averiguo sobre vistas y procedimientos almacenados. Según la pauta, veo difícil incluir funciones de cálculo en este esquema, ya que no es necesario contar, ordenar ni sumar para poder operar.

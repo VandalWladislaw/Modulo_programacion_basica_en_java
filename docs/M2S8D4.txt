@@ -1,0 +1,3 @@
+Semana 8 Dia 4
+Hago los primeros ensayos de código para los procedimientos, para entender la sintaxis. Hay ejemplos muy locos en internet, no se entiende del todo cuando hay ejemplos muy extensos.
+Pienso en implementar procedimientos cuando tenga códigos simples y fáciles de arreglar.

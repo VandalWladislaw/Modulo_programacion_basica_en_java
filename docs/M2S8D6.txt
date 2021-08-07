@@ -1,0 +1,2 @@
+Semana 8 Dia 6
+Implemento las vistas y evalúo que partes del CRUD asigno a cada tabla. Pista->CD; Playlist->CD; Notas->CRUD. Posiblemente agregue funciones a las Playlist, dependiendo de cómo funcione la visualizacion de las vistas vs procedimientos. Tengo una vista que incluye las pistas Y las listas de reproducción, para poder ver si se pueden reproducir pistas que no estén ligadas a una lista en particular.

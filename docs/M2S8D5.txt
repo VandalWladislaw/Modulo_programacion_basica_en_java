@@ -1,0 +1,2 @@
+Semana 8 Dia 5
+Hay algo llamativo en el código, un @ que aparece de vez en cuando. Me pregunto si funciona como el focus o simplemente se refiere a un input que uno debe darle a la entrada correspondiente. Sea Titulo = @Titulo. Creo que tiene sentido que esté asociado a eso. Aun no pongo procedimientos almacenados, a pesar de tener todo redactado en el Notepad++.

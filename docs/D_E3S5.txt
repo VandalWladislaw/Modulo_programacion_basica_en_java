@@ -1,0 +1,6 @@
+Documentacion // evidencia 3 semana 5
+-Revisión de la plataforma y material subido
+-Acceso a esquema de experiencias de usuario y planteamiento del proyecto
+-Búsqueda de material de apoyo en YouTube
+-Instalación GitHub/Netbeans (quizás deba cambiarme a Eclipse)
+-Por lo demás, no puedo revisar videos de clases anteriores, plataforma me fuerza a crear una sala nueva.

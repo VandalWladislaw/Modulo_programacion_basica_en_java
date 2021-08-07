@@ -1,0 +1,2 @@
+Semana 9 Dia 2
+Sigo investigando cómo llevar a cabo lo planteado el día anterior, sin éxito. No hay una manera explícita ni clara de resolver este problema, ya que los ejemplos son siempre distintos, ya que no se muestran tablas intermedias de la misma manera.

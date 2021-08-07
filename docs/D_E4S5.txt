@@ -1,0 +1,7 @@
+Documentacion // evidencia 4 semana 5
+-Revisión planteamiento del proyecto, éxito.
+-Material: POO en Java
+-La aplicación tendría dos DFD: administración de archivos (SCAN) e interfaz de usuario (CONTROL).
+-Se define cada flujo, en papel. Se consultan dudas acerca de SCAN y se efectúan correcciones.
+-Se definen objetos para listas de reproducción (PLIST), que contienen objetos de las pistas (TRACK)
+-Todo definido dentro de un símil de reproductor estándar.
