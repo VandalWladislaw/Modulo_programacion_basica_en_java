@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="imageAlbum" type="id" />
+    <item name="textTrack" type="id" />
+    <item name="textArtist" type="id" />
+    <item name="textAlbum" type="id" />
+    <item name="positionBar" type="id" />
+    <item name="textElapsed" type="id" />
+    <item name="textRemaining" type="id" />
+    <item name="buttonPlayback" type="id" />
+    <item name="button2" type="id" />
+    <item name="button3" type="id" />
+    <item name="button4" type="id" />
+    <item name="button5" type="id" />
+    <item name="volumeBar" type="id" />
+    <item name="minVolume" type="id" />
+    <item name="maxVolume" type="id" />
+</resources>
