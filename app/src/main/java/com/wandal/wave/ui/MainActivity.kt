@@ -2,30 +2,49 @@ package com.wandal.wave.ui
 
 import android.media.MediaMetadataRetriever
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import android.os.Handler
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.tabs.TabLayoutMediator
-import com.wandal.wave.R
+import com.wandal.wave.*
 import com.wandal.wave.adapters.ViewPagerAdapter
-import com.wandal.wave.interfaceMediaPlayer
-import com.wandal.wave.utilities.InjectorUtils
+import com.wandal.wave.databinding.ActivityMainBinding
+import com.wandal.wave.interfaces.InterfaceMediaPlayer
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_track.*
 
 
-class MainActivity : AppCompatActivity(), interfaceMediaPlayer {
+class MainActivity : AppCompatActivity(), InterfaceMediaPlayer {
+
+
+    private lateinit var binding: ActivityMainBinding
     private lateinit var mp: MediaPlayer
     private lateinit var dt: MediaMetadataRetriever
-
+    private lateinit var ur: Uri
+    private lateinit var hd: Handler
     private var totalTime: Int = 0
     private val adapter by lazy { ViewPagerAdapter(this) }
 
-       override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        mp = MediaPlayer.create(this, R.raw.concerto)
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        //init
+        mp = MediaPlayer.create(this, R.raw.concerto)
+        dt = MediaMetadataRetriever()
+        //dt
+        val path = Uri.parse("android.resource://com.wandal.wave/" + R.raw.concerto)
+        dt.setDataSource(this,path)
+
+        var album = dt.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ALBUM)
+        var track = dt.extractMetadata(MediaMetadataRetriever.METADATA_KEY_TITLE)
+        var artist = dt.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ARTIST)
 
         pager.adapter = adapter
         val tabLayoutMediator = TabLayoutMediator(tab_layout, pager, TabLayoutMediator.TabConfigurationStrategy{tab, position ->
@@ -53,71 +72,10 @@ class MainActivity : AppCompatActivity(), interfaceMediaPlayer {
             }
         })
         tabLayoutMediator.attach()
-
         mp.isLooping = false
         totalTime = mp.duration
-
-        //position bar
-
-        //nunca se enlaza seekbar, pendiente
-
-
-        //Thread
-        /*Thread(Runnable{
-            while(mp != null){
-                try{
-                    var msg = Message()
-                    msg.what = mp.currentPosition
-                    handler.sendMessage(msg)
-                    Thread.sleep(1000)
-                } catch (e: InterruptedException){
-                    //nada
-                }
-            }
-        }).start()*/
     }
 
-    /*@SuppressLint("HandlerLeak")
-    var handler = object : Handler(){
-        override fun handleMessage(msg: Message){
-            var currentPosition = msg.what
-
-            //update positionBar
-            positionBar.progress = currentPosition
-
-            //update labels
-            var elapsedTime = createTimeLabel(currentPosition)
-            textElapsed.text = elapsedTime
-
-            var remainingTime = createTimeLabel(totalTime - currentPosition)
-            textRemaining.text = "-$remainingTime"
-        }
-    }*/
-
-    /*fun createTimeLabel(time: Int): String {
-        var timeLabel = ""
-        var min = time / 1000 / 60
-        var sec = time / 1000 % 60
-
-        timeLabel = "$min:"
-        if(sec<10) timeLabel += "0"
-        timeLabel += sec
-
-        return timeLabel
-    }*/
-
-    private fun initializeUi(){
-        val factory = InjectorUtils.provideViewModelFactory()
-        val viewModel = ViewModelProviders.of(this, factory)
-            .get(ViewModel::class.java)
-
-        viewModel.getWaves().observe(this, Observer{waves ->
-            val stringBuilder = StringBuilder()
-            waves.forEach{ wave ->
-                stringBuilder.append("$wave\n\n")
-            }
-        })
-    }
 
     override fun getmp(): MediaPlayer {
         return mp
@@ -125,6 +83,14 @@ class MainActivity : AppCompatActivity(), interfaceMediaPlayer {
 
     override fun getdt(): MediaMetadataRetriever {
         return dt
+    }
+
+    override fun geturi(): Uri {
+        return ur
+    }
+
+    override fun mHandler(): Handler {
+        return hd
     }
 
 }

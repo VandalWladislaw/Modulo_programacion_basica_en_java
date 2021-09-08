@@ -7,14 +7,21 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.wandal.wave.APIService
 import com.wandal.wave.R
 import com.wandal.wave.adapters.PlaylistAdapter
 import kotlinx.android.synthetic.main.fragment_playlist.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class FragmentPlaylist : Fragment() {
 
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<PlaylistAdapter.ViewHolder>? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,4 +41,6 @@ class FragmentPlaylist : Fragment() {
             adapter = PlaylistAdapter()
         }
     }
+
+
 }

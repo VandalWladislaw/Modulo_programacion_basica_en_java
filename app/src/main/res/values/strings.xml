@@ -5,4 +5,6 @@
     <string name="track">Track</string>
     <string name="album">Album</string>
     <string name="artist">Artist</string>
+    <string name="tracktitle">trackTitle</string>
+    <string name="albumimage">albumimage</string>
 </resources>

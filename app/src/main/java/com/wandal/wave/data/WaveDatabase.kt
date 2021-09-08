@@ -1,15 +1,13 @@
 package com.wandal.wave.data
 
-class WaveDatabase private constructor(){
+import androidx.room.Database
+import androidx.room.RoomDatabase
+import com.wandal.wave.data.entities.TrackEntity
 
-    var waveDao = WaveDao()
-    private set
-    companion object {
-        @Volatile private var instance: WaveDatabase? = null
+@Database(entities = [TrackEntity::class], version = 1, exportSchema = false)
+abstract class WaveDatabase: RoomDatabase(){
+    //tomar todas las consultas de WaveDao
+    abstract fun waveDao(): WaveDao
+    //colocar todos los dao en esta clase
 
-        fun getInstance() =
-            instance ?: synchronized(this){
-                instance ?: WaveDatabase().also {instance = it}
-            }
-    }
 }

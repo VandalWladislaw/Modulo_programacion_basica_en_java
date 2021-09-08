@@ -6,6 +6,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.wandal.wave.*
 import com.wandal.wave.fragments.FragmentPlaying
 import com.wandal.wave.fragments.FragmentPlaylist
+import com.wandal.wave.fragments.FragmentTrack
 
 
 class ViewPagerAdapter(fa: FragmentActivity): FragmentStateAdapter(fa){

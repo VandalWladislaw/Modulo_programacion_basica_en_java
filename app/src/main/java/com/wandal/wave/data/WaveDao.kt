@@ -1,20 +1,21 @@
 package com.wandal.wave.data
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import com.wandal.wave.data.entities.TrackEntity
 
-class WaveDao {
-    private val waveList = mutableListOf<Wave>()
-    private val waves = MutableLiveData<List<Wave>>()
 
-    init {
-        waves.value = waveList
-    }
-    fun addWave(wave: Wave){
-        waveList.add(wave)
-        waves.value = waveList
-    }
+@Dao
+interface WaveDao {
+    //acciones en base de datos
 
-    fun getWaves() = waves as LiveData<List<Wave>>
+    //funcion insertar trackEntities
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertTracks(trackEntities: List<TrackEntity>)
+
+    @Query("SELECT * FROM track_entity")
+    suspend fun readTracks():List<TrackEntity>
 
 }
